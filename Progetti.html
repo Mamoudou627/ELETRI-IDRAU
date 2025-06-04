@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Progetti - SOS MOSI</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #f4f7fa;
+      color: #333;
+    }
+
+    nav {
+      background-color: #1f2937;
+      padding: 15px;
+      text-align: center;
+    }
+
+    nav a {
+      color: #ffffff;
+      text-decoration: none;
+      margin: 0 20px;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #00bcd4;
+    }
+
+    header {
+      background-color: #00bcd4;
+      color: white;
+      padding: 30px 0;
+      text-align: center;
+      font-size: 24px;
+      font-weight: 600;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 40px auto;
+      background-color: #ffffff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    }
+
+    h1, h2 {
+      color: #00bcd4;
+      margin-bottom: 20px;
+    }
+
+    .service-types {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .service-button {
+      background-color: #1f2937;
+      color: #ffffff;
+      border: none;
+      padding: 10px 20px;
+      margin: 5px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .service-button:hover {
+      background-color: #00bcd4;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 500;
+    }
+
+    input[type="text"],
+    input[type="tel"],
+    input[type="date"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 16px;
+      background-color: #f9f9f9;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    .submit-button {
+      background-color: #00bcd4;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .submit-button:hover {
+      background-color: #0097a7;
+    }
+
+    .confirmation {
+      text-align: center;
+      background-color: #e6fffa;
+      border: 1px solid #00bcd4;
+      border-radius: 8px;
+      padding: 30px;
+      display: none;
+    }
+
+    .confirmation h3 {
+      color: #00796b;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #1f2937;
+      color: white;
+      margin-top: 50px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html">HOME</a>
+    <a href="Lavoro.html">Lavoro</a>
+    <a href="Progetti.html">Progetti</a>
+  </nav>
+
+  <header>
+    <div class="logo">Progetti - SOS MOSI</div>
+  </header>
+
+  <div class="container">
+    <h1>Benvenuto nella pagina dei Progetti</h1>
+    <p>Qui puoi trovare Il modulo preventivo .</p>
+
+    <div class="service-types">
+      <button class="service-button" id="plumbing">Idraulico</button>
+      <button class="service-button" id="electrical">Elettricista</button>
+    </div>
+
+    <div class="form-section" id="booking-form">
+      <h2>Prenota un intervento</h2>
+
+      <div class="form-group">
+        <label for="name">Nome e Cognome:</label>
+        <input type="text" id="name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Numero di Telefono:</label>
+        <input type="tel" id="phone" required>
+      </div>
+
+      <div class="form-group">
+        <label for="address">Indirizzo completo:</label>
+        <input type="text" id="address" required>
+      </div>
+
+      <div class="form-group">
+        <label for="date">Data preferita:</label>
+        <input type="date" id="date" required>
+      </div>
+
+      <div class="form-group">
+        <label for="time">Orario preferito:</label>
+        <select id="time" required>
+          <option value="">Seleziona un orario</option>
+          <option value="morning">Mattina (8:00 - 12:00)</option>
+          <option value="afternoon">Pomeriggio (13:00 - 17:00)</option>
+          <option value="evening">Sera (17:00 - 20:00)</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="problem">Descrivi il problema:</label>
+        <textarea id="problem" required></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="urgency">Urgenza:</label>
+        <select id="urgency" required>
+          <option value="">Seleziona</option>
+          <option value="normal">Normale</option>
+          <option value="urgent">Urgente (entro 24 ore)</option>
+        </select>
+      </div>
+
+      <button class="submit-button" id="submit-booking">Prenota Ora</button>
+    </div>
+
+    <div class="confirmation" id="confirmation-message" style="display: none;">
+      <h3>Prenotazione Confermata!</h3>
+      <p>Grazie per aver scelto ArtiFix. Ti contatteremo presto per confermare l'appuntamento.</p>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>Progetti di Magassouba - Tutti i diritti riservati</p>
+  </div>
+
+  <script>
+    let selectedService = "";
+
+    document.getElementById('plumbing').addEventListener('click', () => {
+      selectedService = 'Idraulico';
+      alert("Hai selezionato: Idraulico");
+    });
+
+    document.getElementById('electrical').addEventListener('click', () => {
+      selectedService = 'Elettricista';
+      alert("Hai selezionato: Elettricista");
+    });
+
+    document.getElementById('submit-booking').addEventListener('click', function () {
+      const name = document.getElementById('name').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const address = document.getElementById('address').value.trim();
+      const date = document.getElementById('date').value;
+      const time = document.getElementById('time').value;
+      const problem = document.getElementById('problem').value.trim();
+      const urgency = document.getElementById('urgency').value;
+
+      if (name && phone && address && date && time && problem && urgency && selectedService) {
+        document.getElementById('booking-form').style.display = 'none';
+        document.getElementById('confirmation-message').style.display = 'block';
+
+        console.log('Prenotazione effettuata:', {
+          servizio: selectedService,
+          nome: name,
+          telefono: phone,
+          indirizzo: address,
+          data: date,
+          orario: time,
+          problema: problem,
+          urgenza: urgency
+        });
+      } else {
+        alert('Per favore compila tutti i campi obbligatori e seleziona un servizio.');
+      }
+    });
+  </script>
+</body>
+</html>
